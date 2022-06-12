@@ -39,7 +39,7 @@ def main():
             i+=1
             count+=1
         response = requests.post(host, verify=False, allow_redirects=False, data=creds, proxies=proxies)
-        if response.status_code != 200:
+        if response.status_code != 200 and creds['username'] != my_username:
             print("\nusername: %s, password: %s, statuscode: %d" %(creds["username"], creds["password"], response.status_code))
 
        
